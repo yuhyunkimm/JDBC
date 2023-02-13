@@ -3,10 +3,9 @@ package myapp_lab.config;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
-import com.mysql.cj.jdbc.Driver;
-
 public class DBConfig {
     public static Connection getConnection() {
+        // 싱글스레드
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/metadb", "root", "1234");
@@ -17,4 +16,5 @@ public class DBConfig {
         }
         return null;
     }
+
 }
